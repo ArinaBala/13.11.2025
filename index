@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Форма с проверкой</title>
+<style>
+  body {
+    background: #f6f6f6;
+    font-family: Arial, sans-serif;
+  }
+
+  form {
+    background: white;
+    width: 350px;
+    padding: 20px 30px;
+    margin: 50px auto;
+    border-radius: 8px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  input::placeholder {
+    font-style: italic;
+    color: #bbb;
+  }
+
+  input:invalid {
+    border-color: #000000;
+  }
+
+  input:valid {
+    border-color: #11b86a;
+  }
+
+  .note {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #777;
+  }
+
+  .note span {
+    color: #e25b5b;
+    font-size: 20px;
+    margin-right: 6px;
+  }
+
+  
+</style>
+</head>
+<body>
+
+<form>
+  <label>Имя</label>
+  <input type="text" placeholder="Влад" name="name" pattern="[А-Яа-яA-Za-z]+" required>
+
+  <label>Фамилия</label>
+  <input type="text" placeholder="Отченко" name="surname" pattern="[А-Яа-яA-Za-z]+" required>
+
+  <label>Email</label>
+  <input type="email" placeholder="example@gmail.com" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+
+  <label>Номер телефона</label>
+  <input type="tel" placeholder="+38 066 123 45 67" name="phone" pattern="\+38\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}" required>
+
+  <label>Домашний адрес</label>
+  <input type="text" placeholder="г. Киев, ул. Киевская, 1" name="address" required>
+
+  <label>Дата рождения</label>
+  <input type="text" placeholder="18/05/1997" name="birth" pattern="\d{2}/\d{2}/\d{4}" required>
+
+  <div class="note">
+    <span>Х</span>
+    Сейчас эта информация не нужна, <br>большая форма
+  </div>
+
+
+</form>
+
+</body>
+</html>
